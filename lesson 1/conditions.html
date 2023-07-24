@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditions</title>
+</head>
+<body>
+
+<script>
+
+    if (4 === 9) {
+        console.log('ok');
+    } else {
+        console.log('error')
+    }
+
+    //
+
+
+    const num = 50;
+
+    if (num < 49) {
+        console.log('Error')
+    } else if (num > 100) {
+        console.log('Much')
+    } else {
+        console.log('ok')
+    }
+
+    // Умовний (тернарний) оператор - єдиний оператор JavaScript, що приймає три операнда: умова, за яким слідує знак питання (?), потім вираз, яке виконується,
+    // якщо умова істинно, супроводжується двокрапкою (:), і, нарешті, вираз, яке виконується, якщо умова хибна.
+
+    (num === 50) ? console.log('ok') : console.log('error');
+
+    // switch використовується для суворого порівняння
+
+    switch (num) {
+        case 49:
+            console.log('False');
+            break;
+        case 100:
+            console.log('False');
+            break;
+        case 50:
+            console.log('True');
+            break;
+        default:
+            console.log('Not this time');
+            break;
+    }
+
+</script>
+
+</body>
+</html>
