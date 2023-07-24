@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    const numberOfFilms = +prompt("Скік фільмів вже подивився?", '');
+    const personalMovieDB = {
+        count: numberOfFilms,
+        movies: {},
+        actors: {},
+        genres: [],
+        privat: false
+    };
+
+    const a = prompt('Останній фільм?', ''),
+        b = prompt('Ваша оцінка', ''),
+        c = prompt('Останній фільм?', ''),
+        d = prompt('Ваша оцінка', '');
+
+    personalMovieDB.movies[a] = b;
+    personalMovieDB.movies[c] = d;
+
+    console.log(personalMovieDB);
+</script>
+
+</body>
+</html>

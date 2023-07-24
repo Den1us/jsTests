@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ab483bcb-49f0-4abc-8062-48d44496f70f" name="Changes" comment="" />
+    <list default="true" id="ab483bcb-49f0-4abc-8062-48d44496f70f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/lesson 1/lesson1.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson 1/lesson1Test.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alerts.js" beforeDir="false" afterPath="$PROJECT_DIR$/alerts.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -30,6 +36,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -48,6 +55,16 @@
       <recent name="D:\Study\nodejstest" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="lesson1.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/lesson 1/lesson1.js" working-dir="$PROJECT_DIR$/lesson 1">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.lesson1.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -61,7 +78,7 @@
       <workItem from="1676064618040" duration="478000" />
       <workItem from="1676851817946" duration="99000" />
       <workItem from="1682348068913" duration="2610000" />
-      <workItem from="1690204102287" duration="1061000" />
+      <workItem from="1690204102287" duration="3759000" />
     </task>
     <servers />
   </component>

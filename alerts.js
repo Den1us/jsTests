@@ -1,4 +1,4 @@
-git remote add origin https://github.com/Den1us/jsTests.git"use strict";
+//git remote add origin https://github.com/Den1us/jsTests.git"use strict";
 
 /* alert('hello'); */
 /* const result = confirm("a y here?"); */
