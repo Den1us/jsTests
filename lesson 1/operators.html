@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Operators</title>
+</head>
+<body>
+
+<script>
+
+  // const hamburger = true;
+  // const fries = true;
+
+  if (hamburger && fries) {
+    console.log('Im happy');
+  }
+
+  const tomatoes = 5;
+  const apple = 2;
+
+  if (tomatoes && apple) {
+    console.log(tomatoes && apple);
+  }
+
+  const hamburger = 3;
+  const fries = 0;
+  const cola = 0;
+  const nuggets = 2;
+
+  console.log(hamburger === 3 && cola && fries);
+
+  console.log(1 && 0);
+  console.log(1 && 5);
+  console.log(null && 5);
+  console.log(0 && sdafda);
+
+
+  if (hamburger === 3 && cola === 1 && fries) {
+    console.log('Всі поїли');
+  } else {
+    console.log('Ми голодні');
+  }
+
+  if (hamburger === 3 && cola === 2 || fries === 3 && nuggets === 1) {
+    console.log('Хоч щось');
+  } else {
+    console.log('Нічого');
+  }
+
+  let johnReport, alexReport, semReport, miraReport = 'done';
+  console.log(johnReport || alexReport || semReport || miraReport);
+
+  console.log( NaN || 2 || undefined );
+
+  console.log( NaN && 2 && undefined );
+
+  console.log( 1 && 2 && 3 );
+
+  console.log( !1 && 2 || !3 );
+
+  console.log( 25 || null && !3 );
+
+  console.log( NaN || null || !3 || undefined || 5);
+
+  console.log( NaN || null && !3 && undefined || 5);
+
+  console.log( 5 === 5 && 3 > 1 || 5);
+
+
+</script>
+
+</body>
+</html>
