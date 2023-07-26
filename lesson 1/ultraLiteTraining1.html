@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lite Training</title>
+</head>
+<body>
+
+<script>
+
+    // За допомогою циклу виведіть числа від 5 до 10 у консоль. 5 і 10 включно.
+    function task1 () {
+        for (let M = 5; M <= 10; M++) {
+            console.log(`Task 1. Число ${M}`);
+        }
+    }
+    task1();
+    console.log(`____________________________________________`)
+
+
+
+    // За допомогою циклу for вивести числа від 20 до 10 у консоль. У зворотному порядку (20, 19, 18...). Коли цикл дійде до числа 13 - зупинити весь цикл.
+    function task2 () {
+        for (let i = 20; i >= 10; i--) {
+            if (i === 13) {
+                break;
+            }
+            console.log(`Task 2. Цифра ${i}`);
+        }
+    }
+    task2();
+    console.log(`____________________________________________`)
+
+    // За допомогою циклу for виведіть парні числа від 2 до 10 включно
+    function task3 () {
+        for (let i = 0; i <= 10; i++) {
+            if (i % 2 === 0){
+                console.log(`Task 3. Цифра ${i}`);
+            }
+        }
+    }
+    task3();
+    console.log(`____________________________________________`)
+
+    // Перепишіть цикл for на варіант з while. Результат має залишитися точно таким самим.
+    // for (let i = 2; i <= 16; i++) {
+    //     if (i % 2 === 0) {
+    //         continue;
+    //     } else {
+    //         console.log(i);
+    //     }
+    // }
+    function task4 () {
+        let i = 2;
+
+        while (i <= 16) {
+            if (i % 2 === 0) {
+                i++;
+                continue;
+            } else {
+                console.log(`Task 4. Непарні ${i}`);
+            }
+            i++;
+        }
+    }
+    task4();
+    console.log(`____________________________________________`)
+
+    // Напишіть функцію calculateSum, яка приймає масив чисел як вхідний параметр і повертає суму всіх елементів масиву.
+    function calculateSum (numbers) {
+        let sum = 0;
+        for (let i = 0; i < numbers.length; i++){
+            sum += numbers[i];
+        }
+        return sum;
+    }
+
+    let myArr = [];
+    for (let i = 0; i < 6; i++) {
+        myArr.push(i);
+    }
+    const result = calculateSum(myArr);
+    console.log(`Сума всіх елементів масиву: ${result}`);
+    console.log(`____________________________________________`)
+
+    // Напишіть функцію findMax, яка приймає масив чисел як вхідний параметр і повертає найбільше число зі списку.
+
+    function findMax(maxNumber) {
+        let max = maxNumber[0];
+        for (let i = 1; i < maxNumber.length; i++) {
+            if (maxNumber[i] > max){
+                max = maxNumber[i];
+            }
+        }
+        return max;
+    }
+
+    let myArrMax = [];
+    for (let i = 0; i < 15; i++) {
+        myArrMax.push(i);
+    }
+    const resultMax = findMax(myArrMax);
+    console.log(`Найбільше число зі списку: ${resultMax}`);
+    console.log(`____________________________________________`)
+
+    // Знайдіть суму перших N натуральних чисел.
+    function findSumOfNatural(N) {
+        let sum = 0;
+        for (let i = 0; i <= N; i++){
+            sum += i;
+        }
+        return sum;
+    }
+
+    const N = 5;
+    const resultSumOfNatural = findSumOfNatural(N);
+    console.log(`Сума перших ${N} натуральних чисел: ${resultSumOfNatural}`);
+    console.log(`____________________________________________`)
+
+</script>
+
+</body>
+</html>
