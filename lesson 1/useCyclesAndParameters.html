@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Use Cycles and Parameters</title>
+</head>
+<body>
+
+<script>
+
+  function task1 () {
+    const numberOfFilms = +prompt("Скік фільмів вже подивився?", '');
+    const personalMovieDB = {
+      count: numberOfFilms,
+      movies: {},
+      actors: {},
+      genres: [],
+      privat: false
+    };
+    for (let i = 0; i < numberOfFilms; i++) {
+      const a = prompt('One of the latest film', ''),
+            b = prompt('Your mark', '');
+      personalMovieDB.movies[a] = b;
+    }
+    console.log(personalMovieDB);
+  }
+task1();
+
+</script>
+
+</body>
+</html>

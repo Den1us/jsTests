@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Medium Operations Cycles Array</title>
+</head>
+<body>
+
+<script>
+
+  // Заповніть новий масив (result) числами зі старого (arr). const arr = [3, 5, 8, 16, 20, 23, 50];
+
+  function task1 () {
+    const arr = [3, 5, 8, 16, 20, 23, 50];
+    const result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+      result[i] = arr[i];
+    }
+    console.log(result);
+    return result;
+  }
+  task1();
+
+  // Змініть цей масив так, щоб усі числа були збільшені у 2 рази, а якщо трапляється рядок рядок - то до нього було додано " - done". const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+  function task2 () {
+    const data = [5, 10, 'Shopping', 20, 'Homework'];
+    for (let i = 0; i < data.length; i++) {
+      if (typeof data[i] === 'number'){
+        data[i] = data[i] * 2;
+      } else if (typeof data[i] === 'string') {
+        data[i] = `${data[i]} - done`
+      }
+    }
+    console.log(data);
+    return data;
+  }
+  task2();
+
+  // Розгорніть масив data навпаки за допомогою циклу і запишіть дані в масив result. const data = [5, 10, 'Shopping', 20, 'Homework'];
+
+  function task3 () {
+    const data = [5, 10, 'Shopping', 20, 'Homework'];
+    const result = [];
+    // const result = data.reverse(); або так
+
+    for (let i = 1; i <= data.length; i++) {
+      result[i - 1] = data[data.length - i]
+    }
+    console.log(result);
+    return result;
+  }
+  task3();
+
+
+
+  function task4 () {
+      const lenght = 7;
+      let result = '';
+      for (let i = 1; i < lenght; i++) {
+          for (let j = 0; j < i; j++) {
+              result += '*';
+          }
+          result += '\n';
+      }
+      console.log(result);
+  }
+  task4();
+
+  // Зробить піраміду непарних зірок
+  //    *
+  //   ***
+  //  *****
+  // *******
+
+  function task5() {
+      const lines = 5;
+      let result = '';
+
+      for (let i = 0; i <= lines; i++) {
+          for (let j = 0; j < lines - i; j++) {
+              result += ' ';
+          }
+          for (let j = 0; j < 2 * i + 1; j++) {
+              result += '*';
+          }
+          result += '\n';
+      }
+      console.log(result);
+  }
+  task5();
+
+  // Напишіть функцію sumArray, яка приймає масив чисел і повертає суму всіх чисел у масиві.
+  function task6 (arr) {
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+      }
+      return sum;
+  }
+
+  const numOfArr = [1, 2, 4, 6, 1, 2,];
+  console.log(task6(numOfArr));
+  
+  // Напишіть функцію findMax, яка приймає масив чисел і повертає найбільше число з масиву.
+  
+  function findMax(arr) {
+      let max = [0];
+      for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > max) {
+              max = arr[i];
+          }
+      }
+      return max;
+  }
+
+  const numbers = [1, 5, 8, 11, 4, 1, 6];
+  console.log((`Максимальне число масиву: ${findMax(numbers)}`));
+
+  // Напишіть функцію findAverage, яка приймає масив чисел і повертає середнє значення цих чисел.
+
+  function findAverage(arr) {
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+          sum += arr[i];
+      }
+      const avg = sum / arr.length;
+      return avg;
+  }
+  const arr = [1, 2, 5, 7, 2, 1];
+  console.log(`Середне значення масиву [${arr}] : ${findAverage(arr)} `);
+
+</script>
+
+</body>
+</html>
