@@ -9,7 +9,7 @@
 <script>
 
   function task1 () {
-    const numberOfFilms = +prompt("Скік фільмів вже подивився?", '');
+    const numberOfFilms = +prompt("How many movies have you already seen?", '');
     const personalMovieDB = {
       count: numberOfFilms,
       movies: {},
@@ -20,11 +20,141 @@
     for (let i = 0; i < numberOfFilms; i++) {
       const a = prompt('One of the latest film', ''),
             b = prompt('Your mark', '');
-      personalMovieDB.movies[a] = b;
+
+      if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50) {
+          personalMovieDB.movies[a] = b;
+          console.log('done');
+      } else {
+          console.log('error');
+          i--; //інкремент --, на 1 крок повертаємося назад
+      }
     }
-    console.log(personalMovieDB);
+    // цикл з уроку
+    if (personalMovieDB.count < 10) {
+        console.log("You haven't watched enough movies");
+    } else if (personalMovieDB.count > 10 && personalMovieDB.count < 30) {
+        console.log("You are a classic viewer");
+    } else if (personalMovieDB.count > 30) {
+        console.log("You're a huge movie buff");
+    } else {
+        console.log("Error");
+    }
+
+      // я так переписав
+      const message = personalMovieDB.count < 10 ? "You haven't watched enough movies" :
+          personalMovieDB.count >= 10 && personalMovieDB.count < 30 ? "You are a classic viewer" :
+          personalMovieDB.count >= 30 ? "You're a huge movie buff" : "Error";
+    console.log(message);
   }
 task1();
+
+  // СТРІЛОЧНІ ФУНКЦІЇ
+
+  const minus = (a, b) => {// або якщо функція в 1 рядок const minus = (a, b) => a - b;
+      console.log('1');
+      return a - b
+  };
+  console.log(minus(8, 3));
+///
+
+  let num = 20;
+  function showFirstMessage (text) {
+      console.log(text);
+      let num = 10;
+      console.log(num);
+
+  }
+  showFirstMessage('Hello World');
+  console.log(num);
+
+
+  function calc(a, b) {
+      return (a + b); // після return нічого не виконується
+      // console.log('hi'); unreachable code
+  }
+  console.log(calc(4, 3));
+  console.log(calc(5, 8));
+
+  function ret() {
+      let num = 50;
+
+      return num;
+  }
+  const anotherNum = ret();
+  console.log(anotherNum);
+
+  const logger = function () {
+      console.log('Hello Function Expression');
+  };
+  logger();
+
+
+
+  const usdCurr = 28;
+  const eurCurr = 33
+  const discount = 0.9;
+  function convert (amount, curr) {
+      return curr * amount;
+  }
+  function promotion (result) {
+      console.log(result * discount);
+  }
+  const res = convert(500, usdCurr)
+  promotion(res);
+  convert(500, eurCurr);
+
+
+  function test (){
+      for (let i = 0; i < 5; i++){
+          console.log(i);
+          if (i === 3) {
+              return;
+          }
+      }
+      console.log('done');
+  }
+  test();
+
+
+  function doNothing () {}
+      console.log(doNothing() === undefined); // ф-ї які не мають return повертають undefined. Console - об'єкт, log - метод.
+
+  // 1) Створіть функцію, яка буде на вхід приймати 1 аргумент з ім'ям людини і повертати рядок.
+  function sayHello(name) {
+      return `Hi, ${name}!`;
+  }
+  console.log(sayHello('Max'));
+
+  // 2) Створіть функцію, яка приймає в себе 1 аргумент у вигляді цілого числа і повертає масив із трьох чисел: одне на 1 менше, ніж сам аргумент, і число на 1 більше.
+  //Приклад: виклик функції returnNeighboringNumbers(5) повертає масив у вигляді [4, 5, 6].
+  function returnNeighboringNumbers(num) {
+    return [num - 1, num, num + 1];
+  }
+  console.log(returnNeighboringNumbers(5));
+
+  // 3) Створіть функцію, яка прийматиме в себе 2 аргументи, обидва числа. Перше число - це база, друге число - це скільки разів потрібно буде повторити це число в прогресії.
+  // (Дивись приклад нижче). Функція повинна повертати рядок (або число в особливих випадках, про які нижче), де ці числа йдуть по порядку, розділені трьома дефісами "---".
+  //  Після останнього числа їх не повинно бути.
+  //  Якщо другий аргумент не є числом, дорівнює або менше нуля - то повертати просто перший аргумент. (Перевіряємо через оператор typeof)
+  // Приклади:
+  // Виклик функції getMathResult(5, 3) дасть відповідь 5---10---15
+  // Виклик функції getMathResult(3, 10) дасть відповідь 3---6---9---12---15---18---21---24---27---30
+
+  function getMathResult(num, times) {
+      if (typeof (times) !== "number" || times <= 0 ) {
+          return num;
+      }
+      let str = '';
+      for (let i = 1; i <= times; i++) {
+          if (i === times) {
+              str += `${num * i}`;
+          } else {
+              str += `${num * i}---`;
+          }
+      }
+      return str;
+  }
+  console.log(getMathResult(10, 5));
 
 </script>
 

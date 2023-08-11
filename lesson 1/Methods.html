@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Methods</title>
+</head>
+<body>
+
+<script>
+
+  function testMethods () {
+      const str = 'test';
+      // const arr = [1, 2, 3];
+      console.log(str.toUpperCase());
+      // console.log(arr.length);
+      let fruit = 'Some fruit';
+      console.log(fruit.indexOf('fruit'));
+
+      const logg = 'Hello world';
+      console.log(logg.slice(6, 11)); //slice підтримує мінусові значення типу (-5, -1)
+      console.log(logg.substring(6, 11));
+      console.log(logg.substr(6, 5)); // застаріле
+
+      const num = 12.2;
+      console.log(Math.round(num));
+      const test = '12.2px';
+      console.log(parseInt(test)); // string to -> number = 12
+      console.log(parseFloat(test)); // string to -> number = 12.2
+  }
+  // testMethods();
+
+  // let numberOfFilms;
+  // function start () {
+  //     numberOfFilms = +prompt('How many movies have you already seen?', '');
+  //
+  //     while (numberOfFilms === '' || numberOfFilms === null || isNaN(numberOfFilms)) { //isNaN не число
+  //         numberOfFilms = +prompt('How many movies have you already seen?', '');
+  //     }
+  // }
+  // start();
+  //
+  // const personalMovieDB = {
+  //     count: numberOfFilms,
+  //     movies: {},
+  //     actors: {},
+  //     genres: [],
+  //     privat: false
+  // };
+  //
+  // function rememberMyFilms () {
+  //     for (let i = 0; i < numberOfFilms; i++) {
+  //         const a = prompt('One of the latest film', ''),
+  //             b = prompt('Your mark', '');
+  //
+  //         if (a !== null && b !== null && a !== '' && b !== '' && a.length < 50) {
+  //             personalMovieDB.movies[a] = b;
+  //             console.log('done');
+  //         } else {
+  //             console.log('error');
+  //             i--; //інкремент --, на 1 крок повертаємося назад
+  //         }
+  //     }
+  // }
+  // rememberMyFilms();
+  //
+  // function showMyDB (hidden) {
+  //     if (!hidden) {
+  //         console.log(personalMovieDB);
+  //     }
+  // }
+  // showMyDB(personalMovieDB.private);
+  //
+  // function writeYouGenres () {
+  //     for (let i = 1; i <= 3; i++) {
+  //         personalMovieDB.genres[i - 1] = prompt(`Your favorite genre of movie by number ${i}`);
+  //     }
+  // }
+  // writeYouGenres();
+  //
+  // function detectPersonalLevel () {
+  //     const message = personalMovieDB.count < 10 ? "You haven't watched enough movies" :
+  //         personalMovieDB.count >= 10 && personalMovieDB.count < 30 ? "You are a classic viewer" :
+  //         personalMovieDB.count >= 30 ? "You're a huge movie buff" : "Error";
+  //     console.log(message);
+  // }
+  // detectPersonalLevel();
+  //
+  // console.log(personalMovieDB);
+
+
+  // Створіть функцію, яка обчислюватиме об'єм і площу повної поверхні куба. Ця функція приймає в себе ціле число зі значенням довжини ребра куба.
+  function calculateVolumeAndArea(aCube) {
+      if (typeof(aCube) != 'number' || aCube <= 0 || !Number.isInteger(aCube)) {
+          return 'An error occurred in the calculation';
+      }
+      let vCube,
+          sCube;
+      vCube = Math.pow(aCube, 3);
+      sCube = Math.pow(aCube, 2) * 6;
+      return `V Cube: ${vCube}, S Cube: ${sCube}`;
+  }
+  console.log(calculateVolumeAndArea(5));
+
+
+  // Напишіть функцію, яка визначатиме номер купе за переданим їй номером місця
+  //Функція приймає тільки ціле число від 1 до 36
+  //Якщо переданий аргумент не число, від'ємне або дробове - повертається повідомлення
+  function getCoupeNumber(num) {
+      if (typeof (num) !== 'number' || num < 0 || !Number.isInteger(num)) {
+          return 'Error. Check if the entered seat number is correct';
+      }
+      if (num > 36 || num === 0) {
+          return 'There are no such seats in the car';
+      }
+      return Math.ceil(num / 4);
+  }
+  console.log(`Number of a compartment: ${getCoupeNumber(33)}`);
+
+  function getTimeFromMinutes(minutesTotal) {
+      if (typeof (minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
+          return 'Перевірте дані';
+      }
+      const hours = Math.floor(minutesTotal);
+      const minutes = minutesTotal % 60;
+      switch (hours) {
+          case 0:
+              hoursStr = 'годин';
+              break;
+          case 1:
+              hoursStr = 'година';
+              break;
+          case 2:
+          case 3:
+          case 4:
+              hoursStr = 'години';
+              break;
+          default:
+              hoursStr = 'годин';
+      }
+      return `Зараз ${hours} ${hoursStr} и ${minutes} хвилин`;
+  }
+  console.log(getTimeFromMinutes(180));
+
+
+</script>
+
+</body>
+</html>
