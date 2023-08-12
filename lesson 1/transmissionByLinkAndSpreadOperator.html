@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transmission by link and Spread operator</title>
+</head>
+<body>
+
+<script>
+
+  // let a = 5,
+  //     b = a;
+  // b = b + 5;
+  // console.log(b);
+  // console.log(a);
+  //
+  // const obj = {
+  //   a: 5,
+  //   b: 1
+  // };
+
+  // const copy = obj; // тут вкладається посилання на об'єкт, а не сам об'єкт
+  // copy.a = 10;
+  // console.log(copy);
+  // console.log(obj);
+
+  // створення копій об'єктів, масивів тощо
+
+  function copy (mainObj) {
+    let objCopy = {};
+    let key;
+    for (key in mainObj) {
+      objCopy[key] = mainObj;
+    }
+    return objCopy;
+  }
+
+  const  numbers = {
+    a: 2,
+    b: 5,
+    c: {
+      x: 7,
+      y: 4
+    }
+  };
+
+  const newNumbers = copy(numbers);
+  newNumbers.a = 10;
+  newNumbers.c.x = 10;
+  // console.log(newNumbers);
+  // console.log(numbers); // поверхнева копія, лише звертаємося до a,b, які на першому рівні АЛЕ с - вкладена (глибока, другорівнева) копія, до якоя ще не можемо звертатися
+
+  const add = {
+    d: 17,
+    e: 20
+  };
+
+  // з'єднуємо 2 об'єкти add та numbers
+
+  console.log(Object.assign(numbers, add)); // створили незалежну поверхневу (першорівнену) копію, яка нехалежить не від кого
+
+  const clone = Object.assign({}, add); // ще метод копіювання об'єкту
+  clone.d = 20;
+  console.log(add);
+  console.log(clone); // в clone лежить поверхнева копія об'єкту add
+
+  // копії масивів через метод .slice()
+
+  const oldArray = ['a', 'b', 'c'];
+  const newArray = oldArray.slice(); // зкопіювали масив oldArray
+  // якщо так зробимо const newArray = oldArray; - це буде посилання на масив, а не копія
+  newArray[2] = 'strawberry'; //змінили 2й елемент скопійованого масиву
+  console.log(newArray);
+  console.log(oldArray);
+
+  // можна копіваюти за допомогою оператору розвороту Spread operator (...)
+
+  const video = ['youtube', 'spotify', 'apple'],
+          blogs = ['wordpress', 'livejournal', 'blogger'],
+          internet = [...video, ...blogs, 'facebook', 'instagram']; // в цей масив додамо два попередніх за допомогою оператору розвороту
+  console.log(internet);
+
+  function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+  }
+  const num = [2, 5, 34, 1, 22];
+  log(...num);
+
+  const array = ['a', 'b'];
+  const newArray2 = [...array]; // в цій змінній лежить копія масиву array
+
+  const q = {
+    one: 1,
+    two: 2
+  };
+
+  const newObj = {...q}; // скопіювали об'єкт за допомогою Spread operator (...)
+  console.log(newObj);
+
+  ////// У вас є готовий об'єкт із даними. Розробник Х хоче написати частину функціоналу, але йому не вистачає навичок. Виконайте частину завдань за нього.
+  // 1) Напишіть функцію showExperience, яка прийматиме в себе об'єкт з усіма даними і повертатиме рядок з досвідом. => showExperience(personalPlanPeter) => '1 month'
+  // 2) Напишіть функцію showProgrammingLangs, яка прийматиме в себе об'єкт з усіма даними і повертатиме рядок у потрібному вигляді. => showProgrammingLangs(personalPlanPeter) Мова js вивчена на 20%
+  // 3) Створіть метод showAgeAndLangs всередині об'єкта personalPlanPeter. Під час його виклику метод буде приймати в себе об'єкт і повертати рядок у потрібному вигляді.
+      //personalPlanPeter.showAgeAndLangs(personalPlanPeter)=> 'Мені 29 і я володію мовами: RU ENG'
+
+  const personalPlanPeter = {
+      name: "Peter",
+      age: "29",
+      skills: {
+          languages: ['ru', 'eng'],
+          programmingLangs: {
+              js: '20%',
+              php: '10%'
+          },
+          exp: '1 month'
+      },
+      showAgeAndLangs: function (plan) {
+          const {age} = plan;
+          const {languages} = plan.skills;
+          let str = `Мені ${age} і я володію такими мовами: `;
+
+          languages.forEach(function(lang) {
+              str += `${lang.toUpperCase()} `;
+          });
+          return str;
+      }
+  };
+  console.log(personalPlanPeter.showAgeAndLangs(personalPlanPeter));
+
+  function showExperience(plan) {
+      const {exp} = plan.skills;
+      return exp;
+  }
+  console.log(showExperience(personalPlanPeter));
+
+  function showProgrammingLangs(plan) {
+      let str = '';
+      const {programmingLangs} = plan.skills;
+      for (let key in programmingLangs) {
+          str += `Мова ${key} вивчена на ${programmingLangs[key]}\n`
+      }
+      return str;
+  }
+  console.log(showProgrammingLangs(personalPlanPeter));
+
+  // Напишіть функцію showFamily, яка прийматиме в себе масив рядків і повертатиме повідомлення в потрібному форматі. showFamily(family) => 'Сім'я складається з: Peter Ann Alex Linda'
+
+  const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+  function showFamily(arr) {
+    let str = '';
+    arr.length === 0 ? str = 'Немає нікого' : str = "Сім'я складається з: ";
+    arr.forEach(member => {
+        str += `${member} `
+    });
+    return str;
+  }
+  console.log(showFamily(family));
+
+
+  // напишіть функцію standardizeStrings, яка прийматиме в себе масив рядків і виводитиме в консоль ці рядки в нижньому регістрі. standardizeStrings(favoriteCities) виведе в консоль
+  // lisbon
+  // rome
+  // milan
+  // дублін
+
+  const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+  function standardizeStrings(arr) {
+      arr.forEach(city => {
+          console.log(city.toLowerCase())
+      })
+  }
+
+  standardizeStrings(favoriteCities);
+
+
+
+</script>
+
+</body>
+</html>

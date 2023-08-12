@@ -5,9 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab483bcb-49f0-4abc-8062-48d44496f70f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/lesson 1/Methods.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson 1/OOP.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson 1/arrayAndPseudoArray.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson 1/objects.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lesson 1/transmissionByLinkAndSpreadOperator.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lesson 1/useCyclesAndParameters.html" beforeDir="false" afterPath="$PROJECT_DIR$/lesson 1/useCyclesAndParameters.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson 1/Methods.html" beforeDir="false" afterPath="$PROJECT_DIR$/lesson 1/Methods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lesson 1/mediumOperationsCyclesArray.html" beforeDir="false" afterPath="$PROJECT_DIR$/lesson 1/mediumOperationsCyclesArray.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +91,8 @@
       <workItem from="1691141000682" duration="5814000" />
       <workItem from="1691318274140" duration="5981000" />
       <workItem from="1691519508413" duration="786000" />
-      <workItem from="1691715749088" duration="2636000" />
+      <workItem from="1691715749088" duration="14659000" />
+      <workItem from="1691823631422" duration="4202000" />
     </task>
     <servers />
   </component>

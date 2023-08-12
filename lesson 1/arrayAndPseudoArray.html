@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PseudoArray</title>
+</head>
+<body>
+
+<script>
+
+    const arr = [1, 2, 4, 6, 7, 11];
+    arr.pop(); // видалити останній елемент
+    arr.push(21); // додати до масиву число
+    console.log(arr);
+
+    for (let i = 0; i < arr.length; i++) {
+        console.log(arr[i]);
+    }
+
+    for (let value of arr) {
+        console.log(value);
+    }
+
+    // властивість length
+    const myArr1 = [1, 2, 4, 6, 10];
+    // myArr1[10] = 0;
+    console.log(myArr1.length); // отримаємо довжину 100, тобто останній індекс +1
+
+    myArr1.forEach(function (item, i, arr) {
+        console.log(`${i}: ${item} inside the array ${arr}`);
+    });
+
+    // формуємо масив з рядків
+    const str = prompt('', '');
+    const products = str.split(', ');
+    console.log(products);
+
+    // формуємо рядок з масиву
+    console.log(products.join('; '));
+    // сортуємо елементи всередені масиву як "string"
+    console.log(products.sort(compareNum));
+
+    function compareNum(a, b) {
+        for (let i = 0; i < str.length; i++) {
+            if (typeof str[i] === 'number') {
+                return a - b;
+            }
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

@@ -31,7 +31,7 @@
 
   // let numberOfFilms;
   // function start () {
-  //     numberOfFilms = +prompt('How many movies have you already seen?', '');
+  //     numberOfFilms = +prompt('How many movies have you already seen?', '').trim();
   //
   //     while (numberOfFilms === '' || numberOfFilms === null || isNaN(numberOfFilms)) { //isNaN не число
   //         numberOfFilms = +prompt('How many movies have you already seen?', '');
@@ -116,6 +116,9 @@
   }
   console.log(`Number of a compartment: ${getCoupeNumber(33)}`);
 
+  // Створіть функцію, яка приймає в себе ціле число хвилин і повертає час у потрібному форматі рядка.
+  // Зверніть увагу на закінчення слова "година" - воно змінюється залежно від цифри.
+  // Якщо замість аргументу приходить не число, дробове або від'ємне число - функція повертає рядок "Помилка, перевірте дані"
   function getTimeFromMinutes(minutesTotal) {
       if (typeof (minutesTotal) !== 'number' || minutesTotal < 0 || !Number.isInteger(minutesTotal)) {
           return 'Перевірте дані';
@@ -141,6 +144,46 @@
   }
   console.log(getTimeFromMinutes(180));
 
+  // Напишіть функцію, яка приймає в себе 4 числа і повертає найбільше з них. Якщо один з аргументів не є числом або їх менше 4 - повертається 0. Дробові числа дозволені.
+  function findMaxNumber(a, b, c, d) {
+      if (typeof (a, b, c, d) !== 'number') {
+          return 0;
+      } else {
+          return Math.max(a, b, c, d);
+      }
+  }
+  console.log(`Найбільше число: ${findMaxNumber(1, 3, 5, -4)}`);
+
+  // Го перепишемо через масив
+
+  function findMax(arr) {
+      let max = [0];
+      for (let i = 0; i < arr.length; i++) {
+          if (arr[i] > max) {
+              max = arr[i];
+          }
+      }
+      return max;
+  }
+
+  const numbers = [4, 3, -1, 5, 16, 9, 8];
+  console.log((`Максимальне число масиву: ${findMax(numbers)}`));
+
+  // АБО З використанням ..., ви говорите JavaScript розгорнути передані аргументи і створити з них масив, який потім можна використовувати з функцією Math.max().
+  function findMax2(...arr) {
+      return Math.max(...arr);
+  }
+  console.log(findMax2(1, 2, 4, -1, 5));
+
+  // callback функція з анонімною функцією
+
+  function learnJS(lang, callback) {
+      console.log(`I learn: ${lang}`);
+      callback();
+  }
+  learnJS('JavaScript', function () {
+      console.log('Я пройшов цей урок');
+  })
 
 </script>
 
